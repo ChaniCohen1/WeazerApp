@@ -12,6 +12,7 @@ function WeatherCard({data }) {
     'scattered clouds': 'עננים מפוזרים',
     'broken clouds': 'שברי ענן',
     'overcast clouds': 'שמים מעוננים',
+    'moderate rain' : 'גשם קל',
     'mist': 'ערפל',
     'smoke': 'עשן',
     'haze': 'אובך',
@@ -38,9 +39,8 @@ function WeatherCard({data }) {
 
   return (
     <div className="weather-card">
-      <h2>{cityDict[data.name]}</h2>
-      <h3>{icon}</h3>
-      <h4>{weatherDescriptions[data.weather[0].description]}</h4>
+      <h2>{cityDict[data.name]}      {icon}</h2>
+      <h4>{weatherDescriptions[data.weather[0].description] || data.weather[0].description}</h4>
       <p>טמפרטורה נמדדת: {data.main.temp}°</p>
       <p>טמפרטורה מורגשת: {data.main.feels_like}°</p>
       <p>לחות: {data.main.humidity}%</p>

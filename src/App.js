@@ -3,12 +3,12 @@ import WeatherCard from './WeatherCard';
 
 
 function App() {
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState({}); //הגדרת משתנה יוזסטיט
 
-  const fetchWeatherData = async () => {
+  const fetchWeatherData = async () => { //פונקציה עבור עדכון הנתונים
     const apiKey = '8ee633956bad6ae1965b557a94ecfcba';
     const cities = ['Eilat', 'London', 'New York', 'Alaska'];
-
+  
 
     for (const city of cities){
       try{
